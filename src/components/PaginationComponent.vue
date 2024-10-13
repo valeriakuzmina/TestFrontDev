@@ -4,7 +4,7 @@
       @click="changePage(currentPage - 1)" 
       :disabled="currentPage === 1"
     >
-      &lt; <!-- Или можно использовать изображение для стрелки назад -->
+      &lt;
     </button>
 
     <span v-for="page in totalPages" :key="page" class="page-number">
@@ -20,7 +20,7 @@
       @click="changePage(currentPage + 1)" 
       :disabled="currentPage === totalPages"
     >
-      &gt; <!-- Или можно использовать изображение для стрелки вперед -->
+      &gt;
     </button>
   </div>
 </template>
