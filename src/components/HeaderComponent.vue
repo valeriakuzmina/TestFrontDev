@@ -2,7 +2,6 @@
   <div>
     <header class="header">
       <h1 class="logo">Movie Catalog</h1>
-      <!-- Передаем событие 'onSearch' из SearchComponent -->
       <search-component @onSearch="onSearch"></search-component>
       <div class="user">
         <img src="/images/user.png" alt="photo" aria-placeholder="photo-user" class="icon-user">
