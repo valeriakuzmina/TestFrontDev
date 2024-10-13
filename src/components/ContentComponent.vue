@@ -33,9 +33,9 @@ export default {
 
 .movie-container-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
-  grid-template-rows: repeat(2, auto); /* 2 строки */
-  gap: 20px; /* Пробел между элементами */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto); 
+  gap: 20px;
 }
 .movie-card {
   background-color: white;
