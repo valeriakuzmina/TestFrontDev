@@ -31,15 +31,14 @@ export default {
       movies: [],
       loading: false,
       currentPage: 1,
-      query: "", // Инициализация пустого значения для поискового запроса
+      query: "", 
       totalMovies: 0,
       searchMessage: "",
     };
   },
 
   mounted() {
-    // Загружаем фильмы без параметров при загрузке компонента
-    this.fetchMovies(""); // передаем пустую строку для начальной загрузки
+    this.fetchMovies("");
   },
 
   methods: {
@@ -56,21 +55,18 @@ export default {
 
         // Обработка данных ответа
         if (data.Response === "True") {
-          // Сохраняем все найденные фильмы
           this.movies = data.Search || [];
           this.movies = this.movies.slice(0, 8);
           this.totalMovies = parseInt(data.totalResults);
-          this.searchMessage = `You searched for: "${this.query}". Found ${this.totalMovies} movies.`; // Устанавливаем сообщение
+          this.searchMessage = `You searched for: "${this.query}". Found ${this.totalMovies} movies.`;
           const totalResults = data.totalResults
             ? parseInt(data.totalResults)
             : 0;
           this.totalPages = Math.min(Math.ceil(totalResults / 12), 10);
-          // Обновляем общее количество страниц, деля общее количество результатов на 12
-          // this.totalPages = Math.ceil(data.totalResults / 12); // totalResults - общее количество результатов от API
         } else {
           this.movies = [];
           this.searchMessage = "";
-          this.totalPages = 0; // Обнуляем, если фильмы не найдены
+          this.totalPages = 0; 
           console.error("No movies found:", data.Error);
         }
       } catch (error) {
